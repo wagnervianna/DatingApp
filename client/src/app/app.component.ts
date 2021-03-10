@@ -12,16 +12,18 @@ export class AppComponent implements OnInit{
 
   constructor(private http: HttpClient) {}
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.getUsers();
   }
 
+  // tslint:disable-next-line:typedef
   getUsers() {
-    this.http.get('http://localhost:5001/api/users').subscribe(response => {
+    this.http.get('https://localhost:5001/api/users').subscribe(response => {
       this.users = response;
     }, error => {
       console.log(error);
-    })
+    });
   }
 }
 
