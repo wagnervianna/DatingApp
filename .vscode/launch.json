@@ -5,15 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach",
-            "port": 9229,
+            "name": "Attach to Chrome Angular",
+            "port": 9222,
             "request": "attach",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
+            "type": "pwa-chrome",
+            "webRoot": "${workspaceFolder}"
         },
-
+        {
+            "name": "Launch Chrome Angular",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
+        },
         {
             "OS-COMMENT1": "Use IntelliSense to find out which attributes exist for C# debugging",
             "OS-COMMENT2": "Use hover for the description of the existing attributes",
