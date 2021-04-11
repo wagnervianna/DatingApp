@@ -24,13 +24,15 @@ export class AccountService {
           this.currentUserSource.next(user);
         }
       })
-    )
+    );
   }
 
+  // tslint:disable-next-line:typedef
   setCurrentUser(user: User) {
     this.currentUserSource.next(user);
   }
 
+  // tslint:disable-next-line:typedef
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
