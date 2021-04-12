@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <div *ngIf="!registerMode" style="text-align: center;">
+    <div *ngIf="!registerModel " style="text-align: center;">
          <h1>Find your match</h1>
          <p class="lead">Come on int to view your matches.. all you need to do sis sign up!</p>
          <div class="text-center">
@@ -8,11 +8,10 @@
          </div>
     </div>
 
-    <div *ngIf="registerMode" class="container">
+    <div *ngIf="registerModel" class="container">
         <div class="row justify-content-center">
             <div class="col-4">
-                <app-register [usersFromHomeComponent]="users" 
-                    (cancelRegister)="cancelRegister($event)">
+                <app-register (cancelRegister)="cancelRegisterModel($event)">
                 </app-register>
             </div>
         </div>

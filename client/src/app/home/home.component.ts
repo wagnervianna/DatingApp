@@ -7,27 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  registerMode = false;
-  users: any;
+  registerModel = false;
   userEndpoint = 'https://localhost:5001/api/users';
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getUsers();
   }
 
   // tslint:disable-next-line:typedef
   registerToggle() {
-    this.registerMode = !this.registerMode;
+    this.registerModel = !this.registerModel;
   }
 
   // tslint:disable-next-line:typedef
-  getUsers() {
-    this.http.get(this.userEndpoint).subscribe(users => this.users = users);
-  }
-
-  cancelRegister(event: boolean) {
-    this.registerMode = event;
+  cancelRegisterModel(event: boolean) {
+    this.registerModel = event;
   }
 }
