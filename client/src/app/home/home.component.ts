@@ -27,4 +27,7 @@ export class HomeComponent implements OnInit {
     this.http.get(this.userEndpoint).subscribe(users => this.users = users);
   }
 
+  cancelRegister(event: boolean) {
+    this.registerMode = event;
+  }
 }
