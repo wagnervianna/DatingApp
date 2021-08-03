@@ -12,7 +12,7 @@ namespace API.Controllers
 
         public BuggyController(DataContext context)
         {
-            context = _context;
+            _context = context;
         }
 
         [Authorize]

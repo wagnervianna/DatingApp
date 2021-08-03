@@ -61,7 +61,7 @@ namespace API.Data.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "State",
+                name: "Country",
                 table: "Users",
                 nullable: true);
 
@@ -84,13 +84,13 @@ namespace API.Data.Migrations
                         column: x => x.AppUserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Photos_AppUserId1",
+                name: "IX_Photos_AppUserId",
                 table: "Photos",
-                column: "AppUserId1");
+                column: "AppUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -135,7 +135,7 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "State",
+                name: "Country",
                 table: "Users");
 
             migrationBuilder.RenameColumn(
